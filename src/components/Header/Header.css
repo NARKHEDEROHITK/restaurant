@@ -1,0 +1,7 @@
+.actvhm{
+    color: #CFA86E !important;
+}
+.actvhm:before, .actvhm:after {
+    left: 0 !important;
+    width: 100% !important;
+}
