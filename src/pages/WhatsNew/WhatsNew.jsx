@@ -1,12 +1,18 @@
-import React from 'react'
-import BannerName from '../../components/BannerName/BannerName'
+import React from "react";
+import BannerName from "../../components/BannerName/BannerName";
+import SectionWrapper from "../../components/CommonComp/SectionWrapper/SectionWrapper";
+import OurNewCollection from "../../components/OurNewCollection/OurNewCollection";
 
 const WhatsNew = () => {
   return (
     <>
-    <BannerName name="WHATS NEW"/>
-  </>
-  )
-}
+      <BannerName name="WHAT’S NEW" />
 
-export default WhatsNew
+      <SectionWrapper classname="bgdep2">
+        <OurNewCollection />
+      </SectionWrapper>
+    </>
+  );
+};
+
+export default WhatsNew;

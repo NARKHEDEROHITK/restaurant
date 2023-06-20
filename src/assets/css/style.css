@@ -11424,11 +11424,11 @@ img{
     text-transform: uppercase;
 	display: block;
 }
-.fdmnutb li a img{
+.fdmnutb li img{
 	width: 52px;
 	margin-bottom: 15px;
 }
-.fdmnutb li a:hover{
+.fdmnutb li:hover{
 	color: #CFA86E;
 }
 .fdmnutb li:hover{
@@ -11437,7 +11437,7 @@ img{
 .fdmnutb li.actfdmn{
 	border-bottom: 3px solid #CFA86E;
 }
-.fdmnutb li.actfdmn a{
+.fdmnutb li.actfdmn{
 	color: #CFA86E;
 }
 .fdmnscpu{

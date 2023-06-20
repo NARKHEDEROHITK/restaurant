@@ -36,26 +36,26 @@ setTimeout(() => {
 		//Mobile Nav Hide Show
 		if($('.mobile-menu').length){
 			
-			var mobileMenuContent = $('.main-header .nav-outer .main-menu .navigation').html();
-			$('.mobile-menu').append('<div class="close-btn"><span class="icon flaticon-cancel-music"></span></div>');
-			$('.mobile-menu .navigation').append(mobileMenuContent);
-			$('.sticky-header .navigation').append(mobileMenuContent);
-			$('.mobile-menu .close-btn').on('click', function() {
-				$('body').removeClass('mobile-menu-visible');
-			});
+			// var mobileMenuContent = $('.main-header .nav-outer .main-menu .navigation').html();
+			// $('.mobile-menu').append('<div class="close-btn"><span class="icon flaticon-cancel-music"></span></div>');
+			// $('.mobile-menu .navigation').append(mobileMenuContent);
+			// $('.sticky-header .navigation').append(mobileMenuContent);
+			// $('.mobile-menu .close-btn').on('click', function() {
+			// 	$('body').removeClass('mobile-menu-visible');
+			// });
 			//Dropdown Button
 			$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
 				$(this).prev('ul').slideToggle(500);
 			});
 			//Menu Toggle Btn
-			$('.mobile-nav-toggler').on('click', function() {
-				$('body').addClass('mobile-menu-visible');
-			});
+			// $('.mobile-nav-toggler').on('click', function() {
+			// 	$('body').addClass('mobile-menu-visible');
+			// });
 	
 			//Menu Toggle Btn
-			$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
-				$('body').removeClass('mobile-menu-visible');
-			});
+			// $('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
+			// 	$('body').removeClass('mobile-menu-visible');
+			// });
 		}
 	
 		//Shedule Block

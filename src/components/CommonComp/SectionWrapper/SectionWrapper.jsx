@@ -2,10 +2,9 @@ import React from 'react'
 
 const SectionWrapper = ({children , classname}) => {
   return (
-      <section className={`about-section secexp bgdep2 ${classname}`}>
+      <section className={`about-section secexp ${classname}`}>
         {children}
       </section>
-   
   )
 }
 

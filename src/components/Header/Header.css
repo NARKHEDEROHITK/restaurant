@@ -1,7 +1,13 @@
-.actvhm{
-    color: #CFA86E !important;
+.activeLink {
+  color: #cfa86e !important;
 }
-.actvhm:before, .actvhm:after {
-    left: 0 !important;
-    width: 100% !important;
+.activeLink:before,
+.activeLink:after {
+  left: 0 !important;
+  width: 100% !important;
+}
+
+.nested-active {
+  color: #fff !important;
+  background: #cfa86e !important;
 }

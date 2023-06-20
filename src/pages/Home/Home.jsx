@@ -1,57 +1,22 @@
 import React, { useEffect } from 'react'
 import Slider from '../../components/Slider/Slider'
-import SectionWrapper from '../../components/CommonComp/SectionWrapper';
+import SectionWrapper from '../../components/CommonComp/SectionWrapper/SectionWrapper';
 import OurStory from '../../components/OurStory/OurStory';
 import hmpinbnr from '../../assets/images/hmpinbnr.jpg'
-import abc from '../../assets/images/home-3-img-5.jpg'
-import menuh from '../../assets/images/menu-h-img-rev.jpg'
-import dish1 from '../../assets/images/dish1.jpg'
-import dish2 from '../../assets/images/dish2.jpg'
-import dish3 from '../../assets/images/dish3.jpg'
-import dish4 from '../../assets/images/dish4.jpg'
+import OurGallerySlider from '../../components/CommonComp/OurGallerySlider/OurGallerySlider';
+import Testimonial from '../../components/Testimonial/Testimonial';
+import Video from '../../components/Video/Video';
+import TableReservation from '../../components/TableReservation/TableReservation';
+import HappyHours from '../../components/HappyHours/HappyHours';
+import OurMenu from '../../components/OurMenu/OurMenu';
 
 
 const Home = () => {
-
-useEffect(() => {
-  $('.carousel_slide4').each( function() {
-    var $carousel = $(this);
-    $carousel.owlCarousel({
-      dots : $carousel.data("dots"),
-      loop : $carousel.data("loop"),
-      margin: $carousel.data("margin"),
-      autoHeight: true,
-      rewind: $carousel.data("rewind"),
-      autoplay : $carousel.data("autoplay"),
-      nav: $carousel.data("nav"),
-      navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-      autoplayTimeout : $carousel.data("autoplay-timeout"),
-      responsive: {
-        0: {
-          items: 1,
-        },
-        380: {
-          items: 1,
-        },
-        576: {
-          items: 2,
-        },
-        992: {
-          items: 3,
-        },
-        1199: {
-          items: 4
-        }
-      }
-    });
-  });
-})
-
   return (
     <>
       <Slider />
 
-      <SectionWrapper classname='bgdep'>
+      <SectionWrapper classname='bgdep2'>
         <OurStory />
       </SectionWrapper>
 
@@ -59,37 +24,26 @@ useEffect(() => {
         <img src={hmpinbnr} className="w100" />
       </section>
 
-      <section className="bout-section p-0 bgdep">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-6 col-sm-6 opnbgim" style={{ backgroundImage: `url(${abc})` }}>
-              <img src={abc} />
-            </div>
-            <div className="col-md-6 col-sm-6 opnbgtx">
-              <div className="opnbgtx wow fadeInUp">
-                <h2>Happy Hours</h2>
-                <h3>MONDAY - SATURDAY<br /><span>5:00 PM - 1:00 AM</span></h3>
-                <h4><span>ALL DAY</span></h4>
-                <h4><span>BUY 1 GET 1</span></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     <HappyHours/>
 
       {/* <!-- Video Section --> */}
-      <section className="video-section bgdep" >
+      {/* <section className="video-section bgdep" >
         <div className="auto-container">
           <div className="content-box vdbgim wow fadeInUp" style={{ backgroundImage: `url(${menuh})` }}>
 
             <a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" className="play-now" data-fancybox="gallery" data-caption=""><i className="icon flaticon-play-button-3" aria-hidden="true"></i><span className="ripple"></span></a>
           </div>
         </div>
-      </section>
+      </section> */}
+      <Video/>
       {/* <!--End Video Section --> */}
 
+      <SectionWrapper classname='bgdep'>
+        <OurMenu/>
+      </SectionWrapper>
 
-      <section className="about-section secexp bgdep2">
+
+      {/* <section className="about-section secexp bgdep2">
 
         <div className="auto-container">
           <div className="sechdttl wow fadeInUp">
@@ -173,7 +127,19 @@ useEffect(() => {
 
 
         </div>
-      </section>
+      </section> */}
+
+      <SectionWrapper classname='bgdep2'>
+        <OurGallerySlider/>
+      </SectionWrapper>
+
+      <SectionWrapper classname='bgdep'>
+        <TableReservation/>
+      </SectionWrapper>
+
+      <SectionWrapper classname='bgdep2' >
+        <Testimonial/>
+        </SectionWrapper>
 
     </>
   )

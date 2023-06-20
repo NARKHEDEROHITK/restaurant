@@ -17,7 +17,7 @@ const Slider = () => {
                 autoHeight: true,
                 autoplay: true,
                 autoplayTimeout:5000,
-                navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
+                navText: [ '<span className="fa fa-angle-left">', '<span className="fa fa-angle-right">' ],
                 responsive:{
                     0:{
                         items:1

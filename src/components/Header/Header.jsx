@@ -1,8 +1,20 @@
 import React from 'react'
 import LOGO from '../../assets/images/logo.png'
 import { Link, NavLink } from 'react-router-dom'
+import './Header.css'
+import NavMenu from '../NavMenu/NavMenu'
 
 const Header = () => {
+
+
+  const onCloseMenuMobile = ()=>{
+		$('body').removeClass('mobile-menu-visible');
+  }
+
+  const onToggleMenu = ()=>{
+    $('body').addClass('mobile-menu-visible');
+  }
+
   return (
     <>
       <header className="main-header header-style-two alternate">
@@ -17,8 +29,8 @@ const Header = () => {
                 <div className="hdr_righbsh">
                   <div className="hdr_righbcl"><span className="icon flaticon-cancel-music"></span></div>
                   <div className="hdrilg">
-                    <a href="index">
-                      <img src={LOGO} /></a>
+                    <Link to={'/'}>
+                      <img src={LOGO} /></Link>
                   </div>
                   <div className="hdritx">
                     <p>Captain's Deck</p>
@@ -50,7 +62,7 @@ const Header = () => {
                 {/* <!--Nav Box--> */}
                 <div className="nav-outer clearfix">
                   {/* <!--Mobile Navigation Toggler--> */}
-                  <div className="mobile-nav-toggler"><div className="hdr_righbmnu"></div></div>
+                  <div className="mobile-nav-toggler" onClick={()=>onToggleMenu()} ><div className="hdr_righbmnu"></div></div>
                   {/* <!-- Main Menu --> */}
                   <nav className="main-menu navbar-expand-md navbar-light">
                     <div className="navbar-header">
@@ -62,19 +74,19 @@ const Header = () => {
 
                     <div className="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                       <ul className="navigation clearfix">
-                        <li><NavLink to={'/'} className="actvhm">Home</NavLink></li>
-                        <li><NavLink to={'/about-us'} className="actvab">About us</NavLink></li>
-                        {/* <!--<li><a href="menu" className="actvmn">Menu</a></li>--> */}
-                        <li className="dropdown"><a className="actvmn">Menu</a>
+                        <NavMenu closeMobile={onCloseMenuMobile} />
+                        {/* <li><NavLink to={'/'} className={activeClass}>Home</NavLink></li>
+                        <li><NavLink to={'/about-us'} className={activeClass}>About us</NavLink></li>
+                        <li className="dropdown"><a className={activeClass}>Menu</a>
                           <ul>
-                            <li><NavLink to={'/drinks'} className="actvmndk">Drinks</NavLink></li>
-                            <li><NavLink to={'/foods'} className="actvmnfd">Foods</NavLink></li>
+                            <li><NavLink to={'/drinks'} className={activeClass}>Drinks</NavLink></li>
+                            <li><NavLink to={'/foods'} className={activeClass}>Foods</NavLink></li>
                           </ul>
                         </li>
-                        <li><NavLink to={'/gallery'} className="actvgl">Gallery</NavLink></li>
-                        <li><NavLink to={'/media'} className="actvmd">Media</NavLink></li>
-                        <li><NavLink to={'/whats-new'} className="actvwn">What’s new</NavLink></li>
-                        <li><NavLink to={'/location'} className="actvlo">Location</NavLink></li>
+                        <li><NavLink to={'/gallery'} className={activeClass}>Gallery</NavLink></li>
+                        <li><NavLink to={'/media'} className={activeClass}>Media</NavLink></li>
+                        <li><NavLink to={'/whats-new'} className={activeClass}>What’s new</NavLink></li>
+                        <li><NavLink to={'/location'} className={activeClass}>Location</NavLink></li> */}
                       </ul>
                     </div>
                   </nav>
@@ -90,8 +102,8 @@ const Header = () => {
 
         {/* <!-- Mobile Menu  --> */}
         <div className="mobile-menu">
-          <div className="menu-backdrop"></div>
-          <div className="close-btn"><span className="icon flaticon-cancel-1"></span></div>
+          <div className="menu-backdrop" onClick={()=>onCloseMenuMobile()}></div>
+          <div className="close-btn" onClick={()=>onCloseMenuMobile()} ><span className="icon flaticon-cancel-1 flaticon-cancel-music"></span></div>
 
           {/* <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--> */}
           <nav className="menu-box">
@@ -102,6 +114,7 @@ const Header = () => {
             </div>
 
             <ul className="navigation clearfix">
+            <NavMenu closeMobile={onCloseMenuMobile} />
               {/* <!--Keep This Empty / Menu will come through Javascript--> */}
             </ul>
           </nav>
