@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LOGO from '../../assets/images/logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 import NavMenu from '../NavMenu/NavMenu'
 
 const Header = () => {
-
+  const [show, setShow] = useState(false)
 
   const onCloseMenuMobile = ()=>{
 		$('body').removeClass('mobile-menu-visible');
@@ -17,17 +17,17 @@ const Header = () => {
 
   return (
     <>
-      <header className="main-header header-style-two alternate">
+      <header className="main-header header-style-two alternate ">
         <div className="main-box">
           <div className="container-fluid clearfix">
 
             <div className="row">
               <div className="col-lg-2 col-md-3 col-sm-3 col-3 order-lg-last">
-                <div className="hdr_righb">
+                <div className="hdr_righb" onClick={()=>setShow(true)} >
 
                 </div>
-                <div className="hdr_righbsh">
-                  <div className="hdr_righbcl"><span className="icon flaticon-cancel-music"></span></div>
+                <div className="hdr_righbsh" style={{display:show?'block':'none'}} >
+                  <div className="hdr_righbcl" onClick={()=>setShow(false)} ><span className="icon flaticon-cancel-music"></span></div>
                   <div className="hdrilg">
                     <Link to={'/'}>
                       <img src={LOGO} /></Link>
@@ -75,18 +75,6 @@ const Header = () => {
                     <div className="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                       <ul className="navigation clearfix">
                         <NavMenu closeMobile={onCloseMenuMobile} />
-                        {/* <li><NavLink to={'/'} className={activeClass}>Home</NavLink></li>
-                        <li><NavLink to={'/about-us'} className={activeClass}>About us</NavLink></li>
-                        <li className="dropdown"><a className={activeClass}>Menu</a>
-                          <ul>
-                            <li><NavLink to={'/drinks'} className={activeClass}>Drinks</NavLink></li>
-                            <li><NavLink to={'/foods'} className={activeClass}>Foods</NavLink></li>
-                          </ul>
-                        </li>
-                        <li><NavLink to={'/gallery'} className={activeClass}>Gallery</NavLink></li>
-                        <li><NavLink to={'/media'} className={activeClass}>Media</NavLink></li>
-                        <li><NavLink to={'/whats-new'} className={activeClass}>What’s new</NavLink></li>
-                        <li><NavLink to={'/location'} className={activeClass}>Location</NavLink></li> */}
                       </ul>
                     </div>
                   </nav>

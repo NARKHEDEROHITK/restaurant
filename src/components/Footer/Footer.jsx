@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const Footer = () => {
 
   const scrollToTop = () => {
-    var target = $(this).attr('data-target');
+    console.log("scroll to top")
+    var target = $('.scroll-to-target').attr('data-target');
     // animate
     $('html, body').animate({
       scrollTop: $(target).offset().top

@@ -8,12 +8,39 @@ import Dish6 from '../../assets/images/dish6.jpg'
 import Dish7 from '../../assets/images/dish7.jpg'
 import Dish8 from '../../assets/images/dish8.jpg'
 
+const allDishesh = [Dish1 , Dish2 , Dish3 , Dish4 , Dish5 , Dish6 , Dish7 , Dish8]
+
 const GalleryImages = () => {
   return (
     <div className="auto-container">
       <div className="row">
         {/* <!-- Content Column --> */}
-        <div className="col-md-3 col-sm-6 ">
+
+      {
+        allDishesh.map((dish,index)=>{
+          return (
+            <div className="col-md-3 col-sm-6 " key={index}>
+            <div className="glrbim">
+              <a
+                href={dish}
+                className="lightbox-image"
+                data-fancybox="gallery"
+              >
+                <img src={dish} />
+                <div className="glrbtxmn">
+                  <div className="glrbtx">
+                    <p>Main Course</p>
+                    <h3>Grilled Chicken</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          )
+        })
+      }
+
+        {/* <div className="col-md-3 col-sm-6 ">
           <div className="glrbim">
             <a
               href={Dish8}
@@ -119,7 +146,7 @@ const GalleryImages = () => {
               </div>
             </a>
           </div>
-        </div>
+        </div> */}
 
         <div className="col-md-3 col-sm-6 ">
           <div className="glrbim">

@@ -1,24 +1,28 @@
 import React, { useEffect } from "react";
-import dish1 from '../../../assets/images/dish1.jpg'
-import dish2 from '../../../assets/images/dish2.jpg'
-import dish3 from '../../../assets/images/dish3.jpg'
-import dish4 from '../../../assets/images/dish4.jpg'
+import dish1 from "../../../assets/images/dish1.jpg";
+import dish2 from "../../../assets/images/dish2.jpg";
+import dish3 from "../../../assets/images/dish3.jpg";
+import dish4 from "../../../assets/images/dish4.jpg";
+
+const allDishesh = [dish1, dish2, dish3, dish4];
 
 const OurGallerySlider = () => {
-
   useEffect(() => {
-    $('.carousel_slide4').each( function() {
+    $(".carousel_slide4").each(function () {
       var $carousel = $(this);
       $carousel.owlCarousel({
-        dots : $carousel.data("dots"),
-        loop : $carousel.data("loop"),
+        dots: $carousel.data("dots"),
+        loop: $carousel.data("loop"),
         margin: $carousel.data("margin"),
         autoHeight: true,
         rewind: $carousel.data("rewind"),
-        autoplay : $carousel.data("autoplay"),
+        autoplay: $carousel.data("autoplay"),
         nav: $carousel.data("nav"),
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        autoplayTimeout : $carousel.data("autoplay-timeout"),
+        navText: [
+          '<i class="fa fa-angle-left"></i>',
+          '<i class="fa fa-angle-right"></i>',
+        ],
+        autoplayTimeout: $carousel.data("autoplay-timeout"),
         responsive: {
           0: {
             items: 1,
@@ -33,12 +37,12 @@ const OurGallerySlider = () => {
             items: 3,
           },
           1199: {
-            items: 4
-          }
-        }
+            items: 4,
+          },
+        },
       });
     });
-  })
+  });
 
   return (
     <>
@@ -62,24 +66,29 @@ const OurGallerySlider = () => {
             data-nav="false"
             data-loop="true"
           >
-            <div className="item">
-              <div className="glrbim">
-                <a
-                  href={dish1}
-                  className="lightbox-image"
-                  data-fancybox="gallery"
-                >
-                  <img src={dish1} />
-                  <div className="glrbtxmn">
-                    <div className="glrbtx">
-                      <p>Main Course</p>
-                      <h3>Grilled Chicken</h3>
-                    </div>
+            {allDishesh.map((dish, index) => {
+              return (
+                <div className="item" key={index}>
+                  <div className="glrbim">
+                    <a
+                      href={dish}
+                      className="lightbox-image"
+                      data-fancybox="gallery"
+                    >
+                      <img src={dish} />
+                      <div className="glrbtxmn">
+                        <div className="glrbtx">
+                          <p>Main Course</p>
+                          <h3>Grilled Chicken</h3>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                </a>
-              </div>
-            </div>
-            <div className="item">
+                </div>
+              );
+            })}
+
+            {/* <div className="item">
               <div className="glrbim">
                 <a
                   href={dish2}
@@ -146,7 +155,7 @@ const OurGallerySlider = () => {
                   </div>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,5 +1,26 @@
 import React, { useEffect } from "react";
 
+const AllTestimonials = [
+  {
+    name: "Bikash Mitra",
+    location: "Kolkata",
+    review:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.",
+  },
+  {
+    name: "Rahul Saha",
+    location: "Kolkata",
+    review:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.",
+  },
+  {
+    name: "Bikash Mitra",
+    location: "Kolkata",
+    review:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.",
+  },
+];
+
 const Testimonial = () => {
   useEffect(() => {
     $(".carousel_slide01").each(function () {
@@ -62,7 +83,19 @@ const Testimonial = () => {
           data-nav="false"
           data-loop="true"
         >
-          <div className="item">
+          {AllTestimonials.map((item, index) => {
+            return (
+              <div className="item" key={index}>
+                <div className="tstx">
+                  <p>{item.review}</p>
+                  <h3>{item.name}</h3>
+                  <h4>{item.location}</h4>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* <div className="item">
             <div className="tstx">
               <p>
                 It is a long established fact that a reader will be distracted
@@ -96,7 +129,7 @@ const Testimonial = () => {
               <h3>Rabib Biswas</h3>
               <h4>Kolkata</h4>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

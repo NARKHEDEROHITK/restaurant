@@ -21,21 +21,21 @@ function App() {
 
 useEffect(() => {
   setTimeout(() => {
-    $('.hdr_righbcl').click(function () {
-      $('.hdr_righbsh').hide();
-    });
+    // $('.hdr_righbcl').click(function () {
+    //   $('.hdr_righbsh').hide();
+    // });
 
-    $('.hdr_righb').click(function () {
-      $('.hdr_righbsh').show();
-    });
+    // $('.hdr_righb').click(function () {
+    //   $('.hdr_righbsh').show();
+    // });
 
-    $('.fdmnutb li').on('click', function () {
-      $(this).addClass('actfdmn').siblings().removeClass('actfdmn');
-    });
+    // $('.fdmnutb li').on('click', function () {
+    //   $(this).addClass('actfdmn').siblings().removeClass('actfdmn');
+    // });
 
-    $('.popupimgcl').click(function () {
-      $('.popupimg').hide();
-    });
+    // $('.popupimgcl').click(function () {
+    //   $('.popupimg').hide();
+    // });
   }, 1000);
 })
 
